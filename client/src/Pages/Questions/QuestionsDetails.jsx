@@ -20,7 +20,7 @@ const QuestionsDetails = () => {
     const dispatch = useDispatch()
     const User = useSelector((state) => (state.currentUserReducer))
     const location = useLocation()
-    const url = ''
+    const url = 'https://stack-overflow-clone-eta.vercel.app'
 
     const handlePostAns = (e, answerLength) =>{
         e.preventDefault()

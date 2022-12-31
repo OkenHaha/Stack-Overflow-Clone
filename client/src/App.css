@@ -5,6 +5,8 @@
     display: flex;
     justify-content: space-between;
     margin: 0% auto;
+    background: #ccc;
+    z-index: 1;
 }
 
 .home-container-2{
@@ -12,4 +14,12 @@
     width: calc(100% - 164px);
     padding: 24px;
     box-sizing: border-box;
+    background: #666;
+}
+
+.chatbot{
+    z-index: 1000;
+    margin-top: 30%;
+    position: fixed;
+
 }

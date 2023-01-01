@@ -1,25 +1,23 @@
-import React, {useState} from 'react'
-import './Chatbot.css'
-import ChatBot from 'react-chatbot-kit'
+import React, { useState } from 'react';
+import ChatBot from 'react-chatbot-kit';
 
-import ActionProvider from './ActionProvider'
-import MessageParser from './MessageParser'
-import config from './config'
+import './style.css';
+import config from './config';
+import MessageParser from './MessageParser';
+import ActionProvider from './ActionProvider';
 
-const Chatbot = () => {
+export default function App() {
+
   const [isOpen, setIsOpen] = useState(false);
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
   };
+  const [isVerified, setIsVerified] = useState(false)
+  const tri = () => {
+    setIsVerified(!isVerified)
+  }
 
-  const saveMessages = (messages, HTMLString) => {
-    localStorage.setItem('chat_messages', JSON.stringify(messages));
-  };
-
-  const loadMessages = () => {
-    const messages = JSON.parse(localStorage.getItem('chat_messages'));
-    return messages;
-  };
+  const one = true
 
   return (
     <div>
@@ -28,18 +26,19 @@ const Chatbot = () => {
       </button>
       {isOpen && (
         <div className="chatbox">
+          {one && (
+        <button onClick={tri} className="button2">Click me</button>
+        )}
+          {isVerified && (
           <ChatBot
             className="bot"
             config={config}
-            messageHistory={loadMessages()}
-            saveMessages={saveMessages}
             messageParser={MessageParser}
             actionProvider={ActionProvider}
           />
+          )}
         </div>
       )}
     </div>
   );
 }
-
-export default Chatbot

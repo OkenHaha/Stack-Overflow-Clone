@@ -1,46 +1,50 @@
-.chatHeader{
-  display:flex;
+.chatHeader {
+  display: flex;
   justify-content: space-between;
-  width:100%;
-  background:grey;
-  box-sizing: border-box;
-  padding-left: 5px;
+  width: 100%;
+  background: grey;
 }
 .chatbox {
   position: fixed;
   bottom: 0;
-  right:100px;
+  right: 90px;
+  width: 275px;
+  height: 500px;
+  background: #aaa;
+  z-index: 2;
 }
 
 .button {
-  position:fixed;
-  bottom:0;
-  right:30px;
-  width:50px;
-  height:50px;
-  border-radius:50%;
+  position: fixed;
+  bottom: 5px;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
-.close:hover{
-  cursor:pointer;
+.button2 {
+  z-index: 6;
+}
+.bot {
+  z-index: -1;
+}
+.close:hover {
+  cursor: pointer;
 }
 .react-chatbot-kit-chat-container {
   position: relative;
-  width: 275px;
+  width: 100%;
 }
 .react-chatbot-kit-chat-inner-container {
-  height: 500px;
   background-color: #fff;
   border-radius: 3px;
-  border-radius: 5px;
-  margin: 0;
-  padding: 0;
 }
 
 .react-chatbot-kit-chat-header {
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  width:100%;
-  background:grey;
+  width: 100%;
+  background: grey;
 }
 
 .react-chatbot-kit-chat-input-container {
@@ -51,8 +55,7 @@
 }
 
 .react-chatbot-kit-chat-message-container {
-
-  overflow-y:scroll;
+  overflow: scroll;
   height: 424px;
   width: 100%;
   overflow-x: hidden;
@@ -79,31 +82,30 @@
 }
 .react-chatbot-kit-chat-bot-message {
   background: tomato;
-  padding:5px;
-  margin:15px 0 15px 0;
+  padding: 5px;
 }
 .react-chatbot-kit-user-chat-message {
-  display:flex;
+  display: flex;
   justify-content: flex-end;
   background-color: #248bf5;
-  color: #fff; 
-  margin:10px 0 10px 0;
-  padding:5px;
+  color: #fff;
+  margin: 5px 0 5px 0;
+  padding: 5px;
 }
-.react-chatbot-kit-user-chat-messag::before{
+.react-chatbot-kit-user-chat-messag::before {
   border-bottom-left-radius: 0.8rem 0.7rem;
   border-right: 1rem solid #248bf5;
   right: -0.35rem;
   transform: translate(0, -0.1rem);
 }
-.react-chatbot-kit-user-chat-messag::after{
+.react-chatbot-kit-user-chat-messag::after {
   background-color: #fff;
   border-bottom-left-radius: 0.5rem;
   right: -40px;
-  transform:translate(-30px, -2px);
+  transform: translate(-30px, -2px);
   width: 10px;
 }
-.react-chatbot-kit-user-chat-messag ~ .react-chatbot-kit-user-chat-messag{
+.react-chatbot-kit-user-chat-messag ~ .react-chatbot-kit-user-chat-messag {
   margin: 0.25rem 0 0;
 }
 

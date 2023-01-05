@@ -7,6 +7,7 @@ import twilio from 'twilio'
 import userRoutes from './routes/users.js'
 import questionRoutes from './routes/Questions.js'
 import answerRoutes from './routes/Answers.js'
+import otpRoutes from './routes/otp.js'
 
 const app = express();
 dotenv.config();
@@ -21,6 +22,7 @@ app.get('/',(req, res) => {
 app.use('/user', userRoutes)
 app.use('/questions', questionRoutes)
 app.use('/answer', answerRoutes)
+app.use('/otp', otpRoutes)
 
 const PORT = process.env.PORT || 5000
 
@@ -34,22 +36,20 @@ mongoose.connect( DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: tru
 // AUTH_TOKEN
 // VERIFY_SERVICE_SID
 
-app.post('/sent-otp', () => {
-    const client = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN)
-    exports.handler = function(context, event, callback) {
-    const client = context.getTwilioClient();
-    const verifySid = event.verifySid;
-    const phoneNumber = event.phoneNumber;
-    const otp = event.otp;
 
-    client.verify
-        .services(verifySid)
-        .verifications.create({
-        to: phoneNumber,
-        code: otp
-        })
-        .catch(err => {
-        callback(err);
-        });
-    }
-})
+
+// app.post('/sent-otp', (req, res) => {
+//     const client = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN)
+//     const verifySid = process.env.VERIFY_SERVICE_SID
+    
+//     const { to, otp } = req.body
+//     client.messages
+//     .create({
+//         body: `Your OTP is: ${otp}`,
+//         to: to,
+//     })
+//     .then(message => console.log(message.sid))
+//     .done()
+
+//     res.send('OTP sent successfully')
+// })

@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import Twilio from 'twilio'
+import twilio from 'twilio'
 
 import userRoutes from './routes/users.js'
 import questionRoutes from './routes/Questions.js'
@@ -30,9 +30,12 @@ mongoose.connect( DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: tru
     .then(() => app.listen(PORT, () => {console.log(`server running on port ${PORT}`)}))
     .catch((err) => console.log(err.message))
 
-
+// ACCOUNT_SID
+// AUTH_TOKEN
+// VERIFY_SERVICE_SID
 
 app.post('/sent-otp', () => {
+    const client = twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN)
     exports.handler = function(context, event, callback) {
     const client = context.getTwilioClient();
     const verifySid = event.verifySid;

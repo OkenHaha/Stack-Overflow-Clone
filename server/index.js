@@ -2,7 +2,6 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import twilio from 'twilio'
 
 import userRoutes from './routes/users.js'
 import questionRoutes from './routes/Questions.js'

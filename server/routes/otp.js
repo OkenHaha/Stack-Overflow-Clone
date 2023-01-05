@@ -5,7 +5,7 @@ import auth from '../middleware/auth.js'
 
 const router = express.Router()
 
-// router.post('/send-otp',auth, sendOtp)
-// router.post('/verify-otp', auth, verifyOtp)
+router.post('/send-otp', sendOtp)
+router.post('/verify-otp', verifyOtp)
 
 export default router

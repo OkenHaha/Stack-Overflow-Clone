@@ -36,13 +36,13 @@ const OTP = () => {
 			console.error(err)
 		}
 	}
-	const verifyOtp = async (value, code) => {
+	const verifyOtp = async (value, otp) => {
 		
 		//console.log(value, otp)
 	  try {
 	    const response = await axios.post('http://localhost:5000/otp/verify-otp', {
-	      to: value,
-	      code
+	      value,
+	      otp
 	    });
 	    console.log('verifing...')
 	    //console.log(response.data)
@@ -51,7 +51,7 @@ const OTP = () => {
 	       console.log('OTP successfully verified');
 	     } else {
 	       console.log('Invalid OTP');
-	     }
+	     } 
 	    //console.log("verification in process...")
 	  } catch (error) {
 	    console.error(error);

@@ -1,16 +1,17 @@
 import twilio from 'twilio'
 
 const sid = "ACba7bc5cab925fbdd1bffbadcff173ac2"
-const tauth = "9d68eface1c5c5fff038d83c2a5c9d52"
-const verifySid = "VA564ded3588cf4b6b5cba35a0a2212a75"
+const tauth = "4cabbffec4d10eaa61e06857f9f1e593"
+const verifySid = "VA030336b0e620b55218c7bde0ea638dd7"
 
 const client = twilio(sid, tauth)
 
 
 export const sendOtp = async (req, res) => {
     const { value } = req.body
-    console.log(value)
+    //console.log(value)
     try{
+    	console.log(value)
     	const verification = await client.verify.services(verifySid).verifications.create({
     		to: value,
     		channel: 'sms'
@@ -18,31 +19,39 @@ export const sendOtp = async (req, res) => {
     	res.send({verification})
     }
     catch(error) {
-    	res.status(500).send(error)
+    	res.send(error)
     }
 }
-
+ 
 
 
 export const verifyOtp = async (req, res) => {
-	const { value, otp } = req.body
-	console.log(value, otp)
-	const check = await client.verify
-	.services(verifySid)
-	.verificationChecks.create({ to: value, code: otp })
-	try{
-		if(check.status === 'approved') {
-			res.send({check})
-		}
-		else{
-			throw new Error('Incorrect otp.')
-		}
-	}
-	catch(error) {
-		console.log(error)
-		res.send(error) 
-	}
-}
+  const { value, otp } = req.body;
+  console.log(value, otp);
+  client.verify
+    .services(verifySid)
+    .verificationChecks.create({ to: value, code: otp })
+    .then((check) => {
+      if (check.status === 'approved') {
+        res.send({
+          success: true,
+          message: 'OTP verification successful.',
+        });
+      } else {
+        res.send({
+          success: false,
+          message: 'OTP verification failed.',
+        });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      res.send({
+        success: false,
+        message: error.message,
+      });
+    });
+};
 
 
 

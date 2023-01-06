@@ -1,8 +1,6 @@
 import twilio from 'twilio'
 
-const sid = "ACba7bc5cab925fbdd1bffbadcff173ac2"
-const tauth = "4cabbffec4d10eaa61e06857f9f1e593"
-const verifySid = "VA030336b0e620b55218c7bde0ea638dd7"
+
 
 const client = twilio(sid, tauth)
 

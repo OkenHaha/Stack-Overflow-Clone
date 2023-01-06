@@ -2,11 +2,21 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import * as stytch from 'stytch'
+//const stytch = require('stytch')
 
 import userRoutes from './routes/users.js'
 import questionRoutes from './routes/Questions.js'
 import answerRoutes from './routes/Answers.js'
 import otpRoutes from './routes/otp.js'
+
+
+const client = new stytch.Client({
+    project_id: "project-test-d3e2ffcc-fcf2-463b-ab4a-cd040f255d90",
+    secret: "secret-test-NKo1-f5Kc1SmKQwnUiCHMBcnrmlXMRdj5B8=",
+    env: stytch.envs.test,
+      }
+    );
 
 const app = express();
 dotenv.config();
@@ -22,6 +32,7 @@ app.use('/user', userRoutes)
 app.use('/questions', questionRoutes)
 app.use('/answer', answerRoutes)
 app.use('/otp', otpRoutes)
+
 
 const PORT = process.env.PORT || 5000
 

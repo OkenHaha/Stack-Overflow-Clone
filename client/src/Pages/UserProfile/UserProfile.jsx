@@ -18,6 +18,7 @@ const UserProfile = () => {
     const currentProfile = users.filter((user) => user._id === id)[0]
     const currentUser = useSelector((state) => state.currentUserReducer)
     const [Switch, setSwitch] = useState(false)
+    console.log({currentProfile})
 
     return (
         <div className='home-container-1'>
@@ -31,6 +32,7 @@ const UserProfile = () => {
                             </Avatar>
                             <div className="user-name">
                                 <h1>{currentProfile?.name}</h1>
+                                <p>Hello</p>
                                 <p><FontAwesomeIcon icon={faBirthdayCake} /> Joined {moment(currentProfile?.joinedOn).fromNow()}</p>
                             </div>
                         </div>
@@ -39,7 +41,7 @@ const UserProfile = () => {
                                 <button type='button' onClick={() => setSwitch(true)} className='edit-profile-btn'>
                                     <FontAwesomeIcon icon={faPen} /> Edit Profile
                                 </button>
-                            ) 
+                            )
                         }
                     </div>
                     <>

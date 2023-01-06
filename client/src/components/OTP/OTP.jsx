@@ -14,20 +14,49 @@ import './OTP.css'
 //const client = require('twilio')(accountSid, authToken);
 const OTP = () => {
 	const [value, setValue] = useState()
+	const [code, setCode] = useState('')
 
 	const generateRandomNumber = () => {
     // Generate a random number between 1000 and 9990
     const randomNumber = Math.floor(Math.random() * (9990 - 1000 + 1)) + 1000;
-    console.log(randomNumber);
+    //console.log(randomNumber);
+    const otp = String(randomNumber)
+    return otp;
   	};
 
-	const handleSubmit = () => {
-		axios.post('/send-otp', {
-		  toPhoneNumber: value,
-		  otp: '123456'
-		});
+	const sendOtp = async (value) => {
+		console.log(value)
+		try{
+			const response = await axios.post('http://localhost:5000/otp/send-otp', {
+				value,
+			})
+			console.log(response.data)
+		}
+		catch(err) {
+			console.error(err)
+		}
 	}
-
+	const verifyOtp = async (value, code) => {
+		
+		//console.log(value, otp)
+	  try {
+	    const response = await axios.post('http://localhost:5000/otp/verify-otp', {
+	      to: value,
+	      code
+	    });
+	    console.log('verifing...')
+	    //console.log(response.data)
+	    // console.log("verification in process...")
+	     if (response.data === 'Verified') {
+	       console.log('OTP successfully verified');
+	     } else {
+	       console.log('Invalid OTP');
+	     }
+	    //console.log("verification in process...")
+	  } catch (error) {
+	    console.error(error);
+	  }
+	};
 	return (
 		<div className="otp">
 			<PhoneInput
@@ -35,7 +64,11 @@ const OTP = () => {
 	      	value={value}
 	      	onChange={setValue}
 	      	/>
-      	<button type="submit" onClick={generateRandomNumber}>Send OTP</button>
+      	<button type="submit" onClick={() => sendOtp(value)}>otp</button>
+      	<br/>
+	    <input type="text" onChange={event => setCode(event.target.value)} value={code}/>
+	    <p>{code}</p>
+	    <button type="submit" onClick={() => verifyOtp(value, code)}>verify</button>
 		</div>
 	)
 }

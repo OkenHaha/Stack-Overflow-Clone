@@ -45,13 +45,14 @@ const OTP = () => {
 	      otp
 	    });
 	    console.log('verifing...')
+	    console.log(response.data)
 	    //console.log(response.data)
 	    // console.log("verification in process...")
-	     if (response.data === 'approved') {
-	       console.log('OTP successfully verified');
-	     } else {
-	       console.log('Invalid OTP');
-	     } 
+	     // if (response.status === 'approved') {
+	     //   console.log('OTP successfully verified');
+	     // } else {
+	     //   console.log('Invalid OTP');
+	     // } 
 	    //console.log("verification in process...")
 	  } catch (error) {
 	    console.error(error);

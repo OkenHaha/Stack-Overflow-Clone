@@ -32,7 +32,7 @@ export const verifyOtp = async (req, res) => {
     .services(verifySid)
     .verificationChecks.create({ to: value, code: otp })
     .then((check) => {
-      if (check.status === 'approved') {
+      if (check.status === "approved") {
         res.send({
           success: true,
           message: 'OTP verification successful.',

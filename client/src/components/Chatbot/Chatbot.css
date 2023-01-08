@@ -10,8 +10,7 @@
   right: 90px;
   width: 275px;
   height: 500px;
-  background: #aaa;
-  z-index: 2;
+  background: pink;
 }
 
 .button {
@@ -21,12 +20,6 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-}
-.button2 {
-  z-index: 6;
-}
-.bot {
-  z-index: -1;
 }
 .close:hover {
   cursor: pointer;

@@ -1,5 +1,9 @@
 .otp{
-	position: fixed;
-	top:400px;
-	left:400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 275px;
+	height:300px;
 }

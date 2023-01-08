@@ -5,7 +5,7 @@ import LeftSidebar from '../../components/LeftSidebar/LeftSidebar'
 import RightSidebar from '../../components/RightSidebar/RightSidebar'
 import HomeMainbar from '../../components/HomeMainbar/HomeMainbar'
 import Chatbot from '../../components/Chatbot/Chatbot'
-import OTP from '../../components/OTP/OTP'
+
 
 const Home = () => {
     return (
@@ -15,7 +15,6 @@ const Home = () => {
                 <HomeMainbar />
                 <RightSidebar />
             </div>
-            <OTP/>
             <Chatbot/>
         </div>
     )

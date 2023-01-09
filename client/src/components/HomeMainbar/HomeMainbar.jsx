@@ -39,6 +39,9 @@ const HomeMainbar = () => {
                     </>
                 }
             </div>
+            <stripe-pricing-table pricing-table-id="prctbl_1MNbU7SEZ9pOTfziipXsSBwC"
+            publishable-key="pk_test_51MMqciSEZ9pOTfzidRYfEp7K516FgHnxmbMHacQOa3DuJwBOyXLxm0wOES027Ls4Mq92oss2JX0t9D0imKjpAlnY00oZ1Xzojg">
+            </stripe-pricing-table>
         </div>
     )
 }

@@ -9,6 +9,7 @@ import DisplayQuestion from './Pages/Questions/DisplayQuestion'
 import Tags from './Pages/Tags/Tags'
 import Users from './Pages/Users/Users'
 import UserProfile from './Pages/UserProfile/UserProfile'
+import MainPage from './Pages/Community/MainPage'
 
 const AllRoutes = () => {
     return (
@@ -21,6 +22,7 @@ const AllRoutes = () => {
             <Route path='/Tags' element={<Tags />} />
             <Route path='/Users' element={<Users />} />
             <Route path='/Users/:id' element={<UserProfile />} />
+            <Route path='/Community' element={<MainPage/>}/>
         </Routes>
     )
 }

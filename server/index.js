@@ -10,7 +10,7 @@ import questionRoutes from './routes/Questions.js'
 import answerRoutes from './routes/Answers.js'
 import otpRoutes from './routes/otp.js'
 
-
+//const {token} = await stripe.createToken(cardElement, {name: "Name"});
 const app = express();
 const stripe = await loadStripe('sk_test_51MMqciSEZ9pOTfziCcCRBHflDHpCyFCJynuiDwGUANw3FXwzRmgiFBsdNYEG02O3MEWK4WAd5XFZ5e7Dw9AhvH9o00QPw8aHyf')
 

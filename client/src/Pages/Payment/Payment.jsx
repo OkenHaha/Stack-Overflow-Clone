@@ -5,29 +5,46 @@ const stripe = await loadStripe('sk_test_51MMqciSEZ9pOTfziCcCRBHflDHpCyFCJynuiDw
 
 const Payment = () => {
 
-	const [customerId, setCustomerId] = useState()
-	const [email, setEmail] = useState()
+	  const [customerId, setCustomerId] = useState(null);
+	  const [email, setEmail] = useState("");
+	  const [loading, setLoading] = useState(false);
 
-	useEffect(() => {
-		async function createCustomer() {
-			const stripe = await stripPromise;
-			const { error, customer } await stripe.createCustomer({
-				email: email,
-			})
-			if (error) {
-				console.error(error)
-			}
-			else{
-				setCustomerId(customer.id)
-			}
-		}
-		createCustomer()
-	}, [])
+	  const handleSubmit = async (event) => {
+	    event.preventDefault();
+	    setLoading(true);
+	    const stripe = await stripePromise;
+	    const { error, customer } = await stripe.createCustomer({
+	      email: email,
+	    });
+	    if (error) {
+	      console.error(error);
+	    } else {
+	      setCustomerId(customer.id);
+	    }
+	    setLoading(false);
+	  };
 
 	return (
 		<div>
-			{customerId ? <p>Customer ID: {customerId}</p> : <p>Loading...</p>}
-		</div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          placeholder="Email"
+        />
+        <button type="submit" disabled={loading}>
+          Create customer
+        </button>
+      </form>
+      {loading ? (
+        <p>Loading...</p>
+      ) : customerId ? (
+        <p>Customer ID: {customerId}</p>
+      ) : (
+        <p>Enter your email and press create customer</p>
+      )}
+    </div>
 	)
 }
 

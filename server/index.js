@@ -12,7 +12,7 @@ import otpRoutes from './routes/otp.js'
 
 
 const app = express();
-const stripe = await loadStripe('')
+const stripe = await loadStripe('sk_test_51MMqciSEZ9pOTfziCcCRBHflDHpCyFCJynuiDwGUANw3FXwzRmgiFBsdNYEG02O3MEWK4WAd5XFZ5e7Dw9AhvH9o00QPw8aHyf')
 
 dotenv.config();
 app.use(express.json({limit: "30mb", extended: true}))

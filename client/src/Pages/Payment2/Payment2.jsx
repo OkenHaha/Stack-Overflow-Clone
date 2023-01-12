@@ -3,7 +3,7 @@ import { loadStripe }from '@stripe/stripe-js'
 
 const stripe = await loadStripe('sk_test_51MMqciSEZ9pOTfziCcCRBHflDHpCyFCJynuiDwGUANw3FXwzRmgiFBsdNYEG02O3MEWK4WAd5XFZ5e7Dw9AhvH9o00QPw8aHyf')
 
-const Payment = () => {
+const Payment2 = () => {
 
 	  const [customerId, setCustomerId] = useState(null);
 	  const [email, setEmail] = useState("");
@@ -48,4 +48,4 @@ const Payment = () => {
 	)
 }
 
-export default Payment
+export default Payment2

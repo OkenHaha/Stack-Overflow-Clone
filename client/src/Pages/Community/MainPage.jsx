@@ -1,9 +1,11 @@
 import React from 'react'
 import './MainPage.css'
 
+//import Payment from '../Payment/Payment'
 import LeftBar from './LeftBar'
 import Post from './Post'
 import RightSidebar from '../../components/RightSidebar/RightSidebar'
+
 
 const MainPage = () => {
 	return (

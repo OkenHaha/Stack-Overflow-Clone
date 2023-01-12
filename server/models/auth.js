@@ -6,6 +6,7 @@ const userSchema = mongoose.Schema({
     password: {type: String, required: true},
     about: {type: String },
     tags: {type: [String] },
+    plan: { type: String, enum: ["basic", "silver", "platinum"], default: "basic" },
     joinedOn: {type: Date, default: Date.now }
 })
 

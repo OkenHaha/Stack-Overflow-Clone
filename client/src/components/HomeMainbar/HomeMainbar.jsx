@@ -4,6 +4,8 @@ import { useSelector} from 'react-redux'
 import './HomeMainbar.css'
 import QuestionList from './QuestionList'
 
+import Payment2 from '../../Pages/Payment2/Payment2'
+
 const HomeMainbar = () => {
 
     const location = useLocation()

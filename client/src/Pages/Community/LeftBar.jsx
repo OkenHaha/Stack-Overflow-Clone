@@ -25,6 +25,9 @@ const LeftBar = () => {
                     <NavLink to='/Community' className='left-nav-links' activeclassname='active' style={{paddingLeft: "40px"}}>
                         <p>Community</p>
                     </NavLink>
+                    <NavLink to='/test' className='left-nav-links' activeclassname='active' style={{paddingLeft: "40px"}}>
+                        <p>asd</p>
+                    </NavLink>
                 </div>
             </nav>
         </div>

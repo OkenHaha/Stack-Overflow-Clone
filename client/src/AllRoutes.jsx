@@ -10,6 +10,7 @@ import Tags from './Pages/Tags/Tags'
 import Users from './Pages/Users/Users'
 import UserProfile from './Pages/UserProfile/UserProfile'
 import MainPage from './Pages/Community/MainPage'
+import test from './Pages/Payment2/test'
 
 const AllRoutes = () => {
     return (
@@ -23,6 +24,7 @@ const AllRoutes = () => {
             <Route path='/Users' element={<Users />} />
             <Route path='/Users/:id' element={<UserProfile />} />
             <Route path='/Community' element={<MainPage/>}/>
+            <Route path='/test' element={<test/>}/>
         </Routes>
     )
 }

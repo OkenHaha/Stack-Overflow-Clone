@@ -8,7 +8,7 @@ import { loadStripe } from '@stripe/stripe-js'
 
 const HomeMainbar = () => {
 
-    
+    //comment
 
     const location = useLocation()
     const user = 1;

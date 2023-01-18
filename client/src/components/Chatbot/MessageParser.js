@@ -5,6 +5,9 @@ const MessageParser = ({ children, actions }) => {
     if (message.includes('hello')) {
       actions.handleHello();
     } 
+    if (message.include('What is CSS')) {
+      actions.handleCSS();
+    }
     else{
       actions.handleDefault();
     }

@@ -10,6 +10,14 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
       messages: [...prev.messages, botMessage],
     }));
   };
+  const handleCSS = () => {
+    const botMessage = createChatBotMessage('CSS is used for the styling of HTML documents. Its full form is Cascading Style Sheets');
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
   const handleDefault = () => {
     const bmsg = createChatBotMessage("Please ask programming related question");
 
@@ -27,6 +35,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
           actions: {
             handleHello,
             handleDefault,
+            handleCSS,
           },
         });
       })}

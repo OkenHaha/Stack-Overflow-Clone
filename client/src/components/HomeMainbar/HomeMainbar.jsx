@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useSelector} from 'react-redux'
 import './HomeMainbar.css'
 import QuestionList from './QuestionList'
-import { loadStripe } from '@stripe/stripe-js'
+//import { loadStripe } from '@stripe/stripe-js'
 
 
 const HomeMainbar = () => {
@@ -68,28 +68,7 @@ const HomeMainbar = () => {
                 }
             </div>
 
-            <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          placeholder="Email"
-        />
-        <button type="submit" disabled={loading}>
-          Create customer
-        </button>
-      </form>
-      {loading ? (
-        <p>Loading...</p>
-      ) : customerId ? (
-        <p>Customer ID: {customerId}</p>
-      ) : (
-        <p>Enter your email and press create customer</p>
-      )}
-
-            <stripe-pricing-table pricing-table-id="prctbl_1MNbU7SEZ9pOTfziipXsSBwC"
-            publishable-key="pk_test_51MMqciSEZ9pOTfzidRYfEp7K516FgHnxmbMHacQOa3DuJwBOyXLxm0wOES027Ls4Mq92oss2JX0t9D0imKjpAlnY00oZ1Xzojg">
-            </stripe-pricing-table>
+       {/**/}
         </div>
     )
 }

@@ -31,23 +31,23 @@ const HomeMainbar = () => {
       const [email, setEmail] = useState("");
       const [loading, setLoading] = useState(false);
 
-      const stripePromise = loadStripe('pk_test_51MMqciSEZ9pOTfzidRYfEp7K516FgHnxmbMHacQOa3DuJwBOyXLxm0wOES027Ls4Mq92oss2JX0t9D0imKjpAlnY00oZ1Xzojg')
+      //const stripePromise = loadStripe('pk_test_51MMqciSEZ9pOTfzidRYfEp7K516FgHnxmbMHacQOa3DuJwBOyXLxm0wOES027Ls4Mq92oss2JX0t9D0imKjpAlnY00oZ1Xzojg')
 
-      const handleSubmit = async (event) => {
-        event.preventDefault();
-        setLoading(true);
-        const stripe = await stripePromise
-        //const stripe = await stripePromise;
-        const { error, customer } = await stripe.customers.create({
-          email: email,
-        });
-        if (error) {
-          console.error(error);
-        } else {
-          setCustomerId(customer.id);
-        }
-        setLoading(false);
-      };
+      // const handleSubmit = async (event) => {
+      //   event.preventDefault();
+      //   setLoading(true);
+      //   const stripe = await stripePromise
+      //   //const stripe = await stripePromise;
+      //   const { error, customer } = await stripe.customers.create({
+      //     email: email,
+      //   });
+      //   if (error) {
+      //     console.error(error);
+      //   } else {
+      //     setCustomerId(customer.id);
+      //   }
+      //   setLoading(false);
+      // };
 
     return (
         <div className='main-bar'>

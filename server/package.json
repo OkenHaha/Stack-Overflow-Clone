@@ -21,6 +21,7 @@
     "mongoose": "^6.0.12",
     "nodemon": "^2.0.14",
     "random-number-csprng": "^1.0.2",
+    "react-scripts": "^5.0.1",
     "stripe": "^11.6.0",
     "stytch": "^5.17.0",
     "twilio": "^3.84.0"

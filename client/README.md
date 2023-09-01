@@ -9,4 +9,4 @@ I was given a task to implement
 
 I was given a period of 1 days to accomplish these assignments, however, I only required one task to be completed to complete my internship. I wasn' table to complete all of these within the 1 day span, so I had not recieved my stipend but I got my internship certificate fo rsuccessfully completing the internship.
 
-Check it out here:- [here](https://)
+Check it out here:- [here](https://vercel.com/okenhaha/stack-overflow-clone)

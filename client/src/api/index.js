@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API = axios.create({ baseURL: "https://stack-overflow-clone-hazel.vercel.app"})
+const API = axios.create({ baseURL: "https://thriving-belekoy-879684.netlify.app"})
 
 API.interceptors.request.use((req) => {
     if(localStorage.getItem('Profile')){

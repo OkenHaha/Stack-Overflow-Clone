@@ -18,7 +18,7 @@ dotenv.config();
 app.use(express.json({limit: "30mb", extended: true}))
 app.use(express.urlencoded({limit: "30mb", extended: true}))
 const corsOptions ={
-    origin:'https://stack-overflow-clone-hazel.vercel.app',
+    origin:'*',
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
